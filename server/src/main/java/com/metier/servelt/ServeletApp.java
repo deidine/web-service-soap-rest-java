@@ -28,7 +28,11 @@ public class ServeletApp extends HttpServlet {
 //	String forward = "/WEB-INF/index2.jsp";
 	String action;
 	boolean update = false;
-	PersoneServiceImp serviceImp = new PersoneServiceImp();
+
+	PersonneDoa pdo = new PersonneDoa();
+
+	 
+	PersoneServiceImp serviceImp = new PersoneServiceImp( );
 	/**
 	 * Default constructor.
 	 */

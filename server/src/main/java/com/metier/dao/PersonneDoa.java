@@ -71,8 +71,9 @@ public class PersonneDoa {
 		 
 
 		session.close();
-		return per.stream() 
-                .collect(Collectors.toList());
+		return per;
+//		return per.stream() 
+//                .collect(Collectors.toList());
 	}
 
 	public Personne getPers(int id) {

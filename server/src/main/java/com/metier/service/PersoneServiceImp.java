@@ -12,9 +12,11 @@ import com.metier.model.Personne;
 
 @WebService(name="personneSoap")
 public class PersoneServiceImp  {
-	PersonneDoa pdo = new PersonneDoa();
+//	PersonneDoa pdo = new PersonneDoa();
 
-	 
+private final PersonneDoa doa=new PersonneDoa();
+    
+    
 	@WebMethod(operationName = "ajouterPersonne")
 	public void addPerson(
 			@WebParam(name = "nom")
@@ -24,20 +26,20 @@ public class PersoneServiceImp  {
 			@WebParam(name = "age")        
 			int age) {
 		// TODO Auto-generated method stub
-		pdo.savePersonne(nom, age, prenom);
+		this.doa.savePersonne(nom, age, prenom);
 	}
 
 	 
 	@WebMethod
 	public Personne getPerson(int var1) {
-		Personne personne = pdo.getPers(var1);
+		Personne personne = this.doa.getPers(var1);
 		return personne;
 	}
  
 	@WebMethod
 	public List<Personne> getAllPersons() {
 		List<Personne> list = new ArrayList<Personne>();
-		list = pdo.getPersonne();
+		list = this.doa.getPersonne();
 		return list;
 	}
  
@@ -47,12 +49,12 @@ public class PersoneServiceImp  {
 		per.setAge(var1.getAge());
 		per.setNom(var1.getNom());
 		per.setPreNom(var1.getPreNom());
-		pdo.updatePersonne(var1.getId(), per);
+		this.doa.updatePersonne(var1.getId(), per);
 	}
  
 	@WebMethod
 	public void deletePerson(int var1) {
-		pdo.deletePersonne(var1);
+		this.doa.deletePersonne(var1);
 	}
 
 }

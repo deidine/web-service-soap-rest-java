@@ -6,6 +6,8 @@ import ViewEmployeeComponent from './Routes/Employee/ViewEmployeeComponent';
 import AddEmployeeComponent from './Routes/Employee/AddEmployeeComponent';
 import EditEmployeeComponent from './Routes/Employee/EditEmployeeComponent';
 import NotFoundComponent from './NotFound/NotFoundComponent';
+import SoapServiceComponent from './Routes/SoapServiceComponent';
+// import SoapClientComponent from './Routes/SoapClientComponent';
 
 import { Lines } from 'react-preloaders';
 
@@ -25,6 +27,8 @@ function App() {
             <img style={{ height: "100px", margin: "10px 0"}}  
           src={tresore} alt="" />
           </a>
+          <SoapServiceComponent />
+          {/* <SoapClientComponent /> */}
             <BrowserRouter>
               <Switch>
                 <Route path="/" exact component={ListEmployeeComponent} />
